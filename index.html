@@ -1,375 +1,628 @@
- <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Avishka portfolio</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avishka U Chandrasiri - Portfolio</title>
 
-            <meta name="description" content="Avishka u Chandrasiri - Web Developer and Digital Marketer Portfolio">
+    <meta name="description" content="Avishka U Chandrasiri - Web Developer and Digital Marketer Portfolio">
+    <meta name="keywords" content="Avishka U Chandrasiri, Web Developer Sri Lanka, Digital Marketer, Portfolio">
+    <meta name="author" content="Avishka U Chandrasiri">
 
-            <meta name="keywords" content="Avishka u Chandrasiri, Web Developer Sri Lanka, Digital Marketer, Portfolio">
+    <style>
+        /* Global Styles & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            <meta name="author" content="Avishka U Chandrasiri">
+        html {
+            scroll-behavior: smooth;
+        }
 
-             
-            <style>
-                html{scroll-behavior: smooth;}
-
-                h1, h3, p{text-align: center;}
-
-            .container {width: 80%;
-                        margin: auto;
-                        background: white;
-                        padding: 20px;
-                        border-radius: 10px;
-                }
-
-            .menu-icon{
-                display: none;
-                font-size: 28px;
-                color: white;
-                cursor: pointer;
-            }
-
-            .nav-links{
-                    display:flex;
-                    gap:15px;
-            }
-
-            .nav-links a{color:white;
-                        text-decoration:none;
-                        font-weight:bold;
-                    }
-
-            .reveal{
-                    opacity: 0;
-                    transform: translateY(40px);
-                    transition: all 0.6s ease;
-            }
-            
-            .reveal.active{
-                    opacity: 1;
-                    transform: translateY(0);
-            }
-
-            .dark-mode{ background-color:#121212;
-                        color:white;
-            }
-
-            .dark-mode .container{background:#1e1e1e;}
-
-            .dark-mode nav{ background:#000;}
-
-            .dark-mode .project-card{background:#2b2b2b;}    
-
-
-
-            .projects{display: flex;
-                     gap: 20px;
-                     flex-wrap: wrap;
-                     justify-content: center;
-            }
-
-            .project-card:hover{transform: translateY(-8px);
-                                transition: 0.3s;
-                                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            }
-                
-            .project-card{background: #f9f9f9;
-                    padding: 15px;
-                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                    border-radius: 8px;
-                    width: 300px;
-            }
-
-            .hero{text-align: center;
-                padding: 40px;
-            }
-
-            .btn{background: #333;
-                color: white;
-                padding: 10px 20px;
-                text-decoration: none;
-                border-radius: 5px;
-            }
-
-            .btn:hover{background: #555;}
-
-            .bar{background:#ddd;
-                height:10px;
-                border-radius:5px;
-            }
-
-            .bar div{height:10px;
-                    background:#333;
-                    border-radius:5px;
-                    animation: grow 2s;
-            }
-
-            @keyframes grow{
-                    from{width:0;}
-            }
-
-            .html{width: 80%;}
-            .css{width:70%;}
-            .java{width:60%;}
-
-            body {font-family: Arial, sans-serif;
+        body {
+            font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
-            margin: 40px;}
-            
-            nav{background-color: #333;
-                    padding: 10px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h1, h2, h3, p {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .dark-mode h2 {
+            color: #ddd;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        .dark-mode .container {
+            background: #1e1e1e;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #333;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 32px;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Dark Mode Toggle Button */
+        .dark-toggle {
+            background: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .dark-toggle:hover {
+            background: #777;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 30px 20px 40px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .dark-mode .hero {
+            background-color: #2a2a2a;
+        }
+
+        #typing {
+            min-height: 2em;
+            color: #555;
+        }
+         .dark-mode #typing {
+            color: #ccc;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.2s;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: #555;
+            transform: translateY(-2px);
+        }
+
+        /* Skills Section - ANIMATED VERSION */
+        .skills-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .skill-item {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .skill-name {
+            color: #333;
+        }
+        .dark-mode .skill-name {
+            color: #ddd;
+        }
+
+        .skill-percentage {
+            color: #666;
+        }
+        .dark-mode .skill-percentage {
+            color: #aaa;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background-color: #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .dark-mode .progress-bar {
+            background-color: #444;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #333, #555);
+            border-radius: 6px;
+            width: 0; /* Start at 0 */
+            transition: width 1.5s ease-in-out;
+        }
+        .dark-mode .progress-fill {
+            background: linear-gradient(90deg, #666, #888);
+        }
+
+        /* Fill width classes - these will be applied via JavaScript */
+        .html-fill { width: 80%; }
+        .css-fill { width: 70%; }
+        .java-fill { width: 60%; }
+
+        /* Projects Section */
+        .projects {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: #f9f9f9;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        .dark-mode .project-card {
+            background: #2b2b2b;
+            box-shadow: 0 4px 8px rgba(255,255,255,0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card img {
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        /* Contact Form */
+        form {
+            text-align: center;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+            margin-bottom: 15px;
+        }
+        .dark-mode input, .dark-mode textarea {
+            background: #333;
+            border-color: #555;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: gray;
+        }
+        .dark-mode footer {
+            border-top-color: #444;
+        }
+
+        /* Social Links */
+        .social-links a {
+            margin: 0 10px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .dark-mode .social-links a {
+            color: #aaa;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            .container { padding: 20px; }
+
+            .menu-icon {
+                display: block;
             }
 
-            nav a{color: white;
-                text-decoration: none;
-                margin-right: 15px;
-                font-weight: bold;
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                margin-top: 15px;
+                text-align: center;
             }
 
-            nav a:hover{color: yellow;}
-
-            h1 {color: #333;}
-
-            h2{margin-top: 30px}
-
-            ul{list-style-type: square;}
-
-            img{display: block;
-                margin: auto;
-                border-radius: 10px;
-                margin-top: 10px;
+            .nav-links.show {
+                display: flex;
             }
 
-            form{text-align:center;}
-
-            input, textarea{width:80%;
-                            padding:10px;
-                            border-radius:5px;
-                            border:1px solid #ccc;
+            .nav-links a {
+                padding: 12px;
+                border-top: 1px solid #555;
+                width: 100%;
             }
 
-            button{border:none;
-                    cursor:pointer;
+            .projects {
+                flex-direction: column;
+                align-items: center;
             }
 
-            footer{text-align: center;
-                   margin-top: 40px;
-                   color: gray;                 
+            .project-card {
+                width: 100%;
+                max-width: 400px;
             }
 
-            @media(max-width:768px){
-                .container{width: 95%;
-                          
-                }
-
-                .menu-icon{display: block;}
-
-                .nav-links{
-                             display:none;
-                            position:absolute;
-                            top:60px;
-                            left:0;
-                            width: 100%;
-                            background:#333;
-                            flex-direction:column;
-                            text-align:center;
-                }
-                
-                .nav-links.show{display: flex;}
-
-                .nav-links a{
-                          padding:10px;
-                         border-top:1px solid #555;
-                }
-
-                .projects{flex-direction: column;
-                          align-items: center;    
-                }
-
-                .project-card{width: 90%; }
-
-                nav a{display: inline-flex;
-                      margin: 10px 0;
-                }
-
-                .hero{padding: 20px;}
-
-                img{width: 150px;}
-            }
-
-            </style>
-            
-        </head>
-       <body> <div class="container">
+            .hero { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
         <nav>
-            <div class="menu-icon" onclick="toggleMenu()">≡</div>
-
+            <div class="menu-icon" onclick="toggleMenu()" aria-label="Toggle menu">☰</div>
             <div class="nav-links" id="navLinks">
-                    <a href="#">Home</a> |
-                    <a href="#about">About Me</a> |
-                    <a href="#skills">Skills</a> |
-                    <a href="#contact">Contact</a> |
-                    <a href="#projects">Projects</a> |
-                    <a href="#services">Services</a>
+                <a href="#">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
             </div>
-
-            <button onclick="toggleDarkMode()" class="btn">Dark Mode</button>
+            <button onclick="toggleDarkMode()" class="dark-toggle" aria-label="Toggle dark mode">🌙 Dark Mode</button>
         </nav>
 
+        <main>
+            <section class="hero">
+                <h1>Hi, I'm Avishka</h1>
+                <img src="profile.jpeg" width="200" height="200" alt="Photo of Avishka U Chandrasiri">
+                <h3 id="typing"></h3>
+                <p>Management & IT student | Future Web Developer</p>
+                <a href="#contact" class="btn">Hire Me</a>
+            </section>
+
+            <hr>
+
+            <section id="about" class="reveal">
+                <h2>About Me</h2>
+                <p>I am a Management & IT student at the South Eastern University of Sri Lanka.
+                    I am passionate about web development, programming, and digital marketing.
+                    My goal is to become a professional web developer and build useful
+                    web applications.
+                </p>
+            </section>
+
+            <section id="skills" class="reveal">
+                <h2>Skills</h2>
+                <ul style="display: table; margin: 0 auto;">
+                    <li>Java</li>
+                    <li>SQL</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Facebook Ads</li>
+                    <li>Canva Design</li>
+                </ul>
+
+                <h2 class="reveal">Technical Skills</h2>
+                
+                <!-- ANIMATED SKILL BARS -->
+                <div class="skills-container">
+                    <!-- HTML Skill Bar -->
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="html-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- CSS Skill Bar -->
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">CSS</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="css-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Java Skill Bar -->
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Java</span>
+                            <span class="skill-percentage">60%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="java-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="reveal">
+                <h2>Projects</h2>
+                <div class="projects">
+                    <div class="project-card">
+                        <img src="project1.jpg" alt="Screenshot of Personal Portfolio Website">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>This website showcases my skills, projects, and contact information.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/300x180/cccccc/666666?text=Student+DB" alt="Student Database System Diagram">
+                        <h3>Student Database System</h3>
+                        <p>Java and SQL project to manage student records.</p>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/300x180/cccccc/666666?text=Restaurant+Site" alt="Screenshot of Restaurant Website">
+                        <h3>Restaurant Website</h3>
+                        <p>A simple responsive website for a restaurant.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="reveal">
+                <h2>Services</h2>
+                <ul style="display: table; margin: 0 auto;">
+                    <li>Website Development</li>
+                    <li>Portfolio Website Creation</li>
+                    <li>Basic Facebook Ad Setup</li>
+                </ul>
+            </section>
+
+            <section class="reveal">
+                <h2>My Goal</h2>
+                <p>My goal is to become a professional web developer and digital marketer.</p>
+            </section>
+
+            <section id="contact" class="reveal">
+                <h2>Contact Me</h2>
+                <h3>Send Me a Message</h3>
+
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+
+                <p style="margin-top: 30px;">
+                    <a href="https://wa.me/94756724788" class="btn" target="_blank" rel="noopener">Contact Me on WhatsApp</a>
+                </p>
+                <p>Email: <a href="mailto:avishkaumayanga1@gmail.com">avishkaumayanga1@gmail.com</a></p>
+            </section>
+
+            <section class="reveal">
+                <h2>Resume</h2>
+                <p><a href="resume.pdf" class="btn" download>Download My CV</a></p>
+            </section>
+
+            <section class="reveal social-links">
+                <h2>Connect With Me</h2>
+                <p>
+                    <a href="https://avishkauchandrasiri.github.io/portfolio/" target="_blank" rel="noopener">GitHub</a> |
+                    <a href="https://www.linkedin.com/in/avishka-u-chandrasiri/" target="_blank" rel="noopener">LinkedIn</a>
+                </p>
+            </section>
+        </main>
+
         <hr>
-        <section class="hero">
-            <h1>Hi, I'm Avishka</h1>
-        <img src="profile.jpeg" width="200" alt="Photo of Avishka U Chandrasiri">
-        <h3 id = "typing"></h3>
-        <p>Management & IT student | Future Web Developer</p>
 
-        <a href="#contact" class="btn">Hire Me</a>
-        </section>
-        
-        
-        <hr>
-
-        <h2 id="about" class="reveal">About Me</h2>
-        <p>I am a Management & IT student at the South Eastern University of Sri Lanka.
-            I am passionate about web development, programming, and digital marketing.
-            My goal is to become a professional web developer and build useful 
-            web applications. 
-        </p>
-
-        <h2 id="skills" class="reveal">Skills</h2>
-        <ul>
-            <li>Java</li>
-            <li>SQL</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Facebook Ads</li>
-            <li>Canva Design</li>
-        </ul>
-
-        <h2 class = "reveal">Technical Skills </h2>
-
-        <p>HTML</p>
-        <div class="bar"><div class="html"></div></div>
-
-        <p>CSS</p>
-        <div class="bar"><div class="css"></div></div>
-
-        <p>Java</p>
-        <div class="bar"><div class="java"></div></div>
-
-        <h2 id="projects" class="reveal">Projects</h2>
-        <div class="projects">
-         
-        <div class="project-card"> 
-        <img src="project1.jpg" width="100%">      
-        <h3>Personal Portfolio Website</h3>
-        <p>This website showcases my skills, projects, and contact information.</p>
-
-        <a href="https://avishkauchandrasiri.github.io/portfolio/" class="btn">View Project</a>
-        </div>
-
-        <div class="project-card">
-        <h3>Student Database System</h3>
-        <p>java and SQL project to manage student records.</p>
-        </div>
-        <div class="project-card">
-        <h3>Restaurent Website</h3>
-        <p>A simple responsiveness website for a restaurent.</p>    
-        </div>
-
-        </div>
-
-        <h2 id="services" class="reveal">Services</h2>
-        <ul>
-            <li>Website Development</li>
-            <li>PortfolioWebsite Creation</li>
-            <li>Basic Facebook Ad Setup</li>
-        </ul>
-        <h2 class="reveal">My Goal</h2>
-        <p>My goal is to become a professional web developer and digital marketer.</p>
-       
-        <h2 id="contact" class="reveal">Contact</h2>
-        
-        <h3>Send Me a Message</h3>
-
-        <form>
-            <input type="text" placeholder="Your Name" required><br><br>
-
-            <input type="email" placeholder="Your Email" required><br><br>
-
-            <textarea placeholder="Your Message" rows="4" required></textarea><br><br>
-
-            <button class="btn">Send Message</button>
-        </form>
-        
-        
-        <p>
-            <a href="https://wa.me/94756724788" class="btn">Contact Me on WhatsApp</a>
-        </p>
-        <p>Email : <a href="mailto: avishkaumayanga1@gmail.com"> avishkaumayanga1@gmail.com</a></p>
-        
-        <h2 class="reveal">Resume</h2>
-            <p><a href="resume.pdf" class="btn">Download My CV</a></p>
-        
-        <h2 class="reveal">Connect With Me</h2>
-        <p>
-            <a href="https://avishkauchandrasiri.github.io/portfolio/">GitHub</a>
-            <a href="https://www.linkedin.com/in/avishka-u-chandrasiri/">LinkedIn</a>
-        </p>
-        <hr>
-        <footer><p>© 2026 Avishka U Chandrasiri</p>
+        <footer>
+            <p>© 2026 Avishka U Chandrasiri</p>
             <p>Built with HTML & CSS</p>
         </footer>
-        
-       </div>
-        <script>
+    </div>
+
+    <script>
+        // Dark Mode Toggle
         function toggleDarkMode() {
-                            document.body.classList.toggle("dark-mode");
-                                }
-        </script>
-        
-       <script>
+            document.body.classList.toggle('dark-mode');
+        }
 
-            const text = "Aspiring Web Developer & Digital Marketer";
-            let index = 0;
+        // Typing Effect
+        const text = "Aspiring Web Developer & Digital Marketer";
+        let index = 0;
+        const typingElement = document.getElementById('typing');
 
-            function typeEffect(){
-            if(index < text.length){
-            document.getElementById("typing").innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeEffect,80);
+        function typeEffect() {
+            if (index < text.length) {
+                typingElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 80);
             }
-            }
+        }
+        window.addEventListener('load', typeEffect);
 
-            typeEffect();
+        // SKILL BARS ANIMATION FUNCTION
+        function animateSkillBars() {
+            const htmlFill = document.getElementById('html-fill');
+            const cssFill = document.getElementById('css-fill');
+            const javaFill = document.getElementById('java-fill');
+            
+            // Reset widths to 0 first (optional - creates re-animation effect)
+            htmlFill.style.width = '0';
+            cssFill.style.width = '0';
+            javaFill.style.width = '0';
+            
+            // Force a reflow to ensure the animation plays
+            void htmlFill.offsetWidth;
+            
+            // Animate to target widths
+            setTimeout(() => {
+                htmlFill.style.width = '80%';
+                cssFill.style.width = '70%';
+                javaFill.style.width = '60%';
+            }, 200); // Small delay for better visual effect
+        }
 
-        </script>
+        // Scroll Reveal Effect with Skill Bars Animation
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            const revealPoint = 100;
+            let skillsSectionVisible = false;
 
-        <script>
-            window.addEventListener("scroll", function(){
-                const reveals = document.querySelectorAll(".reveal");
-                for(let i=0; i<reveals.length; i++){
-                    const windowHeight = window.innerHeight;
-                    const revealTop = reveals[i].getBoundingClientRect().top;
-                    const revealPoint = 100;
-
-                    if(revealTop<windowHeight - revealPoint){
-                        reveals[i].classList.add("active");
+            for (let i = 0; i < reveals.length; i++) {
+                const revealTop = reveals[i].getBoundingClientRect().top;
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('active');
+                    
+                    // Check if this is the skills section
+                    if (reveals[i].id === 'skills') {
+                        skillsSectionVisible = true;
                     }
                 }
+            }
+            
+            // Animate skill bars when skills section becomes visible
+            if (skillsSectionVisible) {
+                animateSkillBars();
+            }
+        }
+
+        // Animate skill bars when page loads (if skills section is visible)
+        window.addEventListener('load', () => {
+            handleScrollReveal();
+            
+            // Also animate skill bars after a short delay for initial page load
+            setTimeout(() => {
+                const skillsSection = document.getElementById('skills');
+                const skillsPosition = skillsSection.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (skillsPosition < windowHeight - 100) {
+                    animateSkillBars();
+                }
+            }, 500);
+        });
+
+        // Debounce scroll event for better performance
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(handleScrollReveal);
+        });
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('show');
             });
-        </script>
-
-        <script>
-
-            function toggleMenu(){
-document.getElementById("navLinks").classList.toggle("show");
-}
-
-            </script>
-
-    </body>
-    </html>
+        });
+        
+        // Optional: Animate skill bars when clicking on Skills nav link
+        document.querySelector('a[href="#skills"]').addEventListener('click', (e) => {
+            setTimeout(animateSkillBars, 500); // Delay to allow scroll to complete
+        });
+    </script>
+</body>
+</html>
