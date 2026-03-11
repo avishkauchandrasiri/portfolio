@@ -1,6 +1,7 @@
  <!DOCTYPE html>
     <html>
         <head>
+            <title>Avishka portfolio</title>
 
             <meta name="description" content="Avishka u Chandrasiri - Web Developer and Digital Marketer Portfolio">
 
@@ -8,7 +9,7 @@
 
             <meta name="author" content="Avishka U Chandrasiri">
 
-             <title>Avishka portfolio</title>
+             
             <style>
                 html{scroll-behavior: smooth;}
 
@@ -28,7 +29,15 @@
                 cursor: pointer;
             }
 
-            .nav-links a{margin: 010px;}
+            .nav-links{
+                    display:flex;
+                    gap:15px;
+            }
+
+            .nav-links a{color:white;
+                        text-decoration:none;
+                        font-weight:bold;
+                    }
 
             .reveal{
                     opacity: 0;
@@ -108,11 +117,10 @@
             margin: 40px;}
             
             nav{background-color: #333;
-                padding: 10px;
-                text-align: center;
-                position: sticky;
-                top: 0;
-                z-index: 1000;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
             }
 
             nav a{color: white;
@@ -154,19 +162,27 @@
 
             @media(max-width:768px){
                 .container{width: 95%;
-                          margin: 10px;
+                          
                 }
 
                 .menu-icon{display: block;}
 
                 .nav-links{
-                    display: none;
-                    flex-direction: column;
+                             display:none;
+                            position:absolute;
+                            top:60px;
+                            left:0;
+                            width: 100%;
+                            background:#333;
+                            flex-direction:column;
+                            text-align:center;
                 }
                 
+                .nav-links.show{display: flex;}
+
                 .nav-links a{
-                    display: block;
-                    margin: 10px 0;
+                          padding:10px;
+                         border-top:1px solid #555;
                 }
 
                 .projects{flex-direction: column;
@@ -192,14 +208,13 @@
             <div class="menu-icon" onclick="toggleMenu()">≡</div>
 
             <div class="nav-links" id="navLinks">
-            <a href="#">Home</a> |
-            <a href="#about">About Me</a> |
-            <a href="#skills">Skills</a> |
-            <a href="#contact">Contact</a> |
-            <a href="#projects">Projects</a> |
-            <a href="#services">Services</a>
+                    <a href="#">Home</a> |
+                    <a href="#about">About Me</a> |
+                    <a href="#skills">Skills</a> |
+                    <a href="#contact">Contact</a> |
+                    <a href="#projects">Projects</a> |
+                    <a href="#services">Services</a>
             </div>
-            <hr>
 
             <button onclick="toggleDarkMode()" class="btn">Dark Mode</button>
         </nav>
@@ -352,7 +367,7 @@
 
             function toggleMenu(){
 
-            let menu = document.getElementById("navLinks");
+            let menu = document.getElementById("navLinks").classList.toggle("show");
 
             if(menu.style.display === "block"){
             menu.style.display = "none";
