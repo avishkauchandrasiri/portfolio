@@ -164,6 +164,7 @@
             top: 20px;
             z-index: 100;
             animation: slideDown 0.8s ease;
+            transition:0.3s;
         }
 
         @keyframes slideDown {
@@ -201,12 +202,7 @@
             transition: width 0.6s, height 0.6s;
         }
 
-        .nav{
-            transition:0.3s;
-            position:sticky;
-            top:0;
-            }
-
+        
         .nav-links a:hover::before {
             width: 200px;
             height: 200px;
@@ -1054,11 +1050,13 @@
     </div>
     <div class="form-group">
         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <i class="fas fa-pencil-alt input-icon"></i>
+        <i class="fas fa-pencil-alt input-icon" style="top: 20%;"></i>
     </div>
-    <button type="submit" class="btn" id="submitBtn">
-        <i class="fas fa-paper-plane"></i> Send Message
-    </button>
+    <div style="text-align: center; width: 100%;">
+            <button type="submit" class="btn" id="submitBtn" style="display: inline-block; margin: 0 auto; min-width: 200px;">
+                <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+        </div>
 </form>
 
 <!-- Success Message (hidden by default) -->
@@ -1074,10 +1072,10 @@
     <h3 style="margin-bottom:10px;">❌ Oops! Something went wrong</h3>
     <p style="font-size:1.1rem;" id="errorText">Please try again or contact me directly via email.</p>
 </div>
-
+ <br>
                 <div class="contact-info">
-                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/94756724788" target="_blank">WhatsApp</a></p>
-                    <p><i class="far fa-envelope"></i> <a href="mailto:avishkaumayanga1@gmail.com">avishkaumayanga1@gmail.com</a></p>
+                    <p><i class="fab fa-whatsapp" style="size: large;"></i> <a href="https://wa.me/94756724788" target="_blank" style="font-size: large; color: #d4d2d2;">WhatsApp</a></p>
+                    <p><i class="far fa-envelope" style="size: large;"></i> <a href="mailto:avishkaumayanga1@gmail.com" style="font-size: large; color: #d4d2d2;">avishkaumayanga1@gmail.com</a></p>
                 </div>
             </section>
 
