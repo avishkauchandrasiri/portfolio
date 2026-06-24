@@ -327,25 +327,19 @@
             animation: fadeIn 2s;
         }
 
-        .hero-image-container {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-            z-index: 1;
-        }
+        
 
-        /* අලුත් style එක */
-        .hero-image-container img {
+         .hero-image-container img {
             width: 100%;
-            max-width: 420px; /* ටිකක් ලොකු කරා */
-            height: auto;
-            object-fit: contain; /* background නැති නිසා මේක වඩාත් හොඳයි */
-            border-radius: 20px;
-            /* දාර සහ background shadow වෙනුවට සරල පෙනුමක් ලබා දීම */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+            max-width: 450px; /* පින්තූරයේ size එක තව ටිකක් වැඩි කළා */
+            height: 450px; /* height එක width එකට සමාන කිරීමෙන් පින්තූරය හරියටම රවුම් වේ */
+            object-fit: cover; /* පින්තූරය කැපී නොගොස් රවුම තුළටම ගැළපේ */
+            object-position: top; /* පින්තූරයේ උඩ කොටස (මුහුණ) පෙනෙන සේ සකසයි */
+            border-radius: 50%; /* මෙය පින්තූරය සම්පූර්ණයෙන්ම රවුම් කරයි */
+            border: 8px solid rgba(255, 255, 255, 0.3); /* රවුම වටේට ලස්සන රාමුවක් */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3); /* ගැඹුරු සෙවනැල්ලක් */
             animation: floatImage 4s ease-in-out infinite;
             transition: transform 0.5s;
-            margin: 0;
         }
 
         .hero-image-container img:hover { transform: scale(1.03) translateY(-10px); }
