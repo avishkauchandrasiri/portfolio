@@ -334,14 +334,15 @@
             z-index: 1;
         }
 
+        /* අලුත් style එක */
         .hero-image-container img {
             width: 100%;
-            max-width: 380px;
-            aspect-ratio: 3/4;
-            object-fit: cover;
-            border-radius: 30px;
-            border: 6px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            max-width: 420px; /* ටිකක් ලොකු කරා */
+            height: auto;
+            object-fit: contain; /* background නැති නිසා මේක වඩාත් හොඳයි */
+            border-radius: 20px;
+            /* දාර සහ background shadow වෙනුවට සරල පෙනුමක් ලබා දීම */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
             animation: floatImage 4s ease-in-out infinite;
             transition: transform 0.5s;
             margin: 0;
@@ -760,7 +761,7 @@
                 </div>
                 
                 <div class="hero-image-container animate__animated animate__zoomIn">
-                    <img src="profile.jpeg" alt="Photo of Avishka U Chandrasiri">
+                    <img src="profile.png" alt="Avishka U Chandrasiri" style="width: 100%; max-width: 400px; border-radius: 20px;">
                 </div>
             </section>
 
